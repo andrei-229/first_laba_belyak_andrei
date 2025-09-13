@@ -39,3 +39,16 @@
 
 # debug information files
 *.dwo
+
+# cmake files
+CMakeFiles
+CMakeCache.txt
+*.cmake
+Makefile
+
+#gtest
+_deps
+
+# compiled files
+run_file
+tests
