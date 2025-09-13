@@ -15,16 +15,14 @@ FetchContent_MakeAvailable(googletest)
 
 set(SOURCE_EXE main.cpp)
 
-add_library(my_pow_lib my_pow/pow.cpp)  # или my_pow/pow.h если это header-only
+add_library(my_pow_lib my_pow/pow.cpp)
 target_include_directories(my_pow_lib PUBLIC my_pow_lib)
 
-# Добавление библиотеки ans
-add_library(ans_lib ans/ans.cpp)  # или ans/ans.h если это header-only
+add_library(ans_lib ans/ans.cpp)
 target_include_directories(ans_lib PUBLIC ans_lib)
 
 target_link_libraries(ans_lib PRIVATE my_pow_lib)
 
-# Основное исполняемое приложение
 add_executable(run_file ${SOURCE_EXE})
 target_link_libraries(run_file PRIVATE my_pow_lib ans_lib)
 
@@ -33,5 +31,4 @@ enable_testing()
 add_executable(tests test/tests.cpp)
 target_link_libraries(tests ans_lib gtest_main)
 
-# Добавление тестов в тестовый набор
 add_test(NAME MyProjectTests COMMAND tests)
