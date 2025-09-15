@@ -38,6 +38,12 @@ first_laba_belyak_andrei/
 │   └── tests.cpp         # Unit-тесты с использованием Google Test
 └── readme.md               # Данный файл
 ```
+### Если вы в windows
+
+```bash
+wsl
+```
+
 ### Сборка проекта
 
 ```bash
